@@ -5,6 +5,12 @@ app = FastAPI(title="Currency Wallet API", version="1.0.0")
 
 app.include_router(wallet_router, prefix="/wallet", tags=["wallet"])
 
-@app.get("/")
+@app.get("/", summary="Root Endpoint")
 async def root():
-  return {"message": "Hello, world! This is your currency wallet API."}
+    """
+    Root endpoint to verify that the API is running.
+
+    Returns:
+        dict: Welcome message.
+    """
+    return {"message": "Hello, world! This is your currency wallet API."}
